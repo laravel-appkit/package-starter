@@ -36,17 +36,22 @@ fi
 
 echo
 
-#rm -rf .git
-#git init
+if [ "$current_directory" != "package-starter" ]
+then
+
+rm -rf .git
+git init
+
+fi
 
 echo
 
-find . -type f -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
-find . -type f -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
-find . -type f -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_name_cap/${package_name^}/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
-find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:package_name_cap/${package_name^}/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
+find . -type f -not -path "./.git/*" -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
 
 sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
@@ -55,6 +60,10 @@ mv "./src/Package.php" "./src/${package_name^}.php"
 mv "./src/PackageFaceade.php" "./src/${package_name^}Faceade.php"
 mv "./src/PackageServiceProvider.php" "./src/${package_name^}ServiceProvider.php"
 
+if [ "$current_directory" != "package-starter" ]
+then
+
 echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
 
-#rm -- "$0"
+rm -- "$0"
+fi
