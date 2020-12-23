@@ -48,7 +48,7 @@
                 "AppKit\\:package_name_cap\\:package_name_capServiceProvider"
             ],
             "aliases": {
-                ":package_name_cap": "AppKit\\:package_name_cap\\::package_name_capFacade"
+                ":package_name_cap": "AppKit\\:package_name_cap\\:package_name_capFacade"
             }
         }
     }
