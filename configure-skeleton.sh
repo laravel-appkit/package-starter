@@ -50,6 +50,11 @@ find . -type f -exec sed -i '' -e "s/:package_description/$package_description/g
 
 sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
+mv "./src/routes/package.php" "./src/routes/$package_name.php"
+mv "./src/Package.php" "./src/${package_name^}.php"
+mv "./src/PackageFaceade.php" "./src/${package_name^}Faceade.php"
+mv "./src/PackageServiceProvider.php" "./src/${package_name^}ServiceProvider.php"
+
 echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
 
 #rm -- "$0"
