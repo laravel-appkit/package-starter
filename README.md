@@ -37,11 +37,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email d@coutts.io instead of using the issue tracker.
+If you discover any security related issues, please email appkit-security@coutts.io instead of using the issue tracker.
 
 ## Credits
 
-- [Darren Coutts](https://github.com/appkit)
+- [Darren Coutts](https://github.com/laravel-appkit)
 - [All Contributors](../../contributors)
 
 ## License
