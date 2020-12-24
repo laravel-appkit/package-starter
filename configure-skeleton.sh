@@ -38,10 +38,8 @@ echo
 
 if [ "$current_directory" != "package-starter" ]
 then
-
-rm -rf .git
-git init
-
+    rm -rf .git
+    git init
 fi
 
 echo
@@ -62,8 +60,7 @@ mv "./src/PackageServiceProvider.php" "./src/${package_name^}ServiceProvider.php
 
 if [ "$current_directory" != "package-starter" ]
 then
+    echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
 
-echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
-
-rm -- "$0"
+    rm -- "$0"
 fi
