@@ -33,11 +33,13 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ### Security
 
 If you discover any security related issues, please email appkit-security@coutts.io instead of using the issue tracker.
+
+Please see [SECURITY](.github/SECURITY.md) for more details.
 
 ## Credits
 
