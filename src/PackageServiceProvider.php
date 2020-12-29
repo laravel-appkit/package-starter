@@ -14,10 +14,10 @@ class :package_name_capServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'package');
-        // $this->loadViewsFrom(__DIR__ . '/../resources/views', 'package');
+        // $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', ':package_name');
+        // $this->loadViewsFrom(__DIR__ . '/../resources/views', ':package_name');
         // $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__ . '/routes/package.php');
+        // $this->loadRoutesFrom(__DIR__ . '/routes/:package_name.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -26,17 +26,17 @@ class :package_name_capServiceProvider extends ServiceProvider
 
             // Publishing the views.
             /*$this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/package'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/:package_name'),
             ], 'views');*/
 
             // Publishing assets.
             /*$this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('vendor/package'),
+            __DIR__ . '/../resources/assets' => public_path('vendor/:package_name'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/package'),
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/:package_name'),
             ], 'lang');*/
 
             // Registering package commands.
