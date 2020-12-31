@@ -23,7 +23,7 @@ read -p "Package description: " package_description
 
 echo
 echo -e "Author: $author_name ($author_username, $author_email)"
-echo -e "Package: $package_name <$package_name_php>"
+echo -e "Package: $package_name <${package_name_php^}>"
 
 echo
 echo "This script will replace the above values in all files in the project directory and reset the git repository."
@@ -43,7 +43,7 @@ then
     git init
 fi
 
-echo "Scaffolding package."
+echo "Scaffolding package"
 
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_name/$author_name/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_username/$author_username/g" {} \;
@@ -54,7 +54,7 @@ find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup
 
 sed -i -e "/^\*\*Note:\*\* Replace/d" README.md
 
-echo "Renaming files."
+echo "Renaming files"
 
 mv "./src/routes/package.php" "./src/routes/$package_name_php.php"
 mv "./src/Package.php" "./src/${package_name_php^}.php"
@@ -70,9 +70,9 @@ fi
 
 if [[ -d "vendor" ]]
 then
-    echo "Composer dependancies already installed. Dumping autoload."
+    echo "Composer dependencies already installed. Dumping autoload"
     composer dump-autoload
 else
-    echo "Composer dependancies not installed. Installing them."
+    echo "Composer dependencies not installed. Installing them"
     composer install
 fi
