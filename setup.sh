@@ -66,13 +66,13 @@ fi
 
 if [ "$current_directory" != "package-starter" ]
 then
+    rm -- "$0"
+
     git add .
     git commit -m ":sparkles: Configure Package";
     git push
 
     echo "Replaced all values and commited, self destructing in 3... 2... 1..."
-
-    rm -- "$0"
 else
     echo "Replaced all values"
 fi
