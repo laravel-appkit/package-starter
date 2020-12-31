@@ -72,7 +72,11 @@ fi
 
 if [ "$current_directory" != "package-starter" ]
 then
-    echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
+    git add .
+    git commit -m ":sparkles: Configure Package";
+    git push
+
+    echo "Replaced all values and commited, self destructing in 3... 2... 1..."
 
     rm -- "$0"
 else
