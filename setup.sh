@@ -37,12 +37,6 @@ fi
 
 echo
 
-if [ "$current_directory" != "package-starter" ]
-then
-    rm -rf .git
-    git init
-fi
-
 echo "Scaffolding package"
 
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_name/$author_name/g" {} \;
