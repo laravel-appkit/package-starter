@@ -61,13 +61,6 @@ mv "./src/Package.php" "./src/${package_name_php^}.php"
 mv "./src/PackageFacade.php" "./src/${package_name_php^}Facade.php"
 mv "./src/PackageServiceProvider.php" "./src/${package_name_php^}ServiceProvider.php"
 
-if [ "$current_directory" != "package-starter" ]
-then
-    echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
-
-    rm -- "$0"
-fi
-
 if [[ -d "vendor" ]]
 then
     echo "Composer dependencies already installed. Dumping autoload"
@@ -76,3 +69,14 @@ else
     echo "Composer dependencies not installed. Installing them"
     composer install
 fi
+
+if [ "$current_directory" != "package-starter" ]
+then
+    echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
+
+    rm -- "$0"
+else
+    echo "Replaced all values"
+fi
+
+echo "'\033[0;32m'Build something awesome!"
