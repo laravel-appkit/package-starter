@@ -17,12 +17,13 @@ current_directory=`pwd`
 current_directory=`basename $current_directory`
 read -p "Package name ($current_directory): " package_name
 package_name=${package_name:-$current_directory}
+package_name_php=$(echo $package_name | sed -E 's/[^a-z]+([a-z])/\U\1/gi;s/^([A-Z])/\l\1/')
 
 read -p "Package description: " package_description
 
 echo
 echo -e "Author: $author_name ($author_username, $author_email)"
-echo -e "Package: $package_name <$package_description>"
+echo -e "Package: $package_name <$package_name_php>"
 
 echo
 echo "This script will replace the above values in all files in the project directory and reset the git repository."
@@ -42,21 +43,18 @@ then
     git init
 fi
 
-echo
+echo "Scaffolding package."
 
-package_name_php=$(echo $package_name | sed -E 's/[^a-z]+([a-z])/\U\1/gi;s/^([A-Z])/\l\1/')
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_name/$author_name/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_username/$author_username/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:author_email/$author_email/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:package_name_php/${package_name_php^}/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:package_name/$package_name/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i -e "s/:package_description/$package_description/g" {} \;
 
-echo $package_name
-echo $package_name_php;
+sed -i -e "/^\*\*Note:\*\* Replace/d" README.md
 
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name_php/${package_name_php^}/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
-
-sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
+echo "Renaming files."
 
 mv "./src/routes/package.php" "./src/routes/$package_name_php.php"
 mv "./src/Package.php" "./src/${package_name_php^}.php"
@@ -75,6 +73,6 @@ then
     echo "Composer dependancies already installed. Dumping autoload."
     composer dump-autoload
 else
-    echo "Composer dependancies not installed. Installing them"
+    echo "Composer dependancies not installed. Installing them."
     composer install
 fi
