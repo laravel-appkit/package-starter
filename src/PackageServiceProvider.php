@@ -17,7 +17,7 @@ class :package_name_phpServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', ':package_name');
         // $this->loadViewsFrom(__DIR__ . '/../resources/views', ':package_name');
         // $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__ . '/routes/:package_name.php');
+        // $this->loadRoutesFrom(__DIR__ . '/../routes/:package_name.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([

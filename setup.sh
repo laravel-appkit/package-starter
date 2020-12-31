@@ -50,7 +50,7 @@ sed -i -e "/^\*\*Note:\*\* Replace/d" README.md
 
 echo "Renaming files"
 
-mv "./src/routes/package.php" "./src/routes/$package_name_php.php"
+mv "./routes/package.php" "./routes/$package_name_php.php"
 mv "./src/Package.php" "./src/${package_name_php^}.php"
 mv "./src/PackageFacade.php" "./src/${package_name_php^}Facade.php"
 mv "./src/PackageServiceProvider.php" "./src/${package_name_php^}ServiceProvider.php"
