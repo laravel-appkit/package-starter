@@ -69,3 +69,12 @@ then
 
     rm -- "$0"
 fi
+
+if [[ -f "vendor" ]]
+then
+    echo "Composer dependancies already installed. Dumping autoload."
+    composer dump-autoload
+else
+    echo "Composer dependancies not installed. Installing them"
+    composer install
+fi
