@@ -44,7 +44,10 @@ fi
 
 echo
 
-package_name_php=$(echo '$package_name' | sed -E 's/[^a-z]+([a-z])/\U\1/gi;s/^([A-Z])/\l\1/')
+package_name_php=$(echo $package_name | sed -E 's/[^a-z]+([a-z])/\U\1/gi;s/^([A-Z])/\l\1/')
+
+echo $package_name
+echo $package_name_php;
 
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
