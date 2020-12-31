@@ -16,10 +16,13 @@ $finder = Symfony\Component\Finder\Finder::create()
 return PhpCsFixer\Config::create()
     ->setRules([
         '@PSR2' => true,
-        'blank_line_after_opening_tag' => true,
-        'braces' => [
-            'allow_single_line_anonymous_class_with_empty_body' => true,
+        'array_syntax' => [
+            'syntax' => 'short'
         ],
+        'blank_line_after_opening_tag' => true,
+        /*'braces' => [
+            'allow_single_line_anonymous_class_with_empty_body' => true,
+        ],*/
         'compact_nullable_typehint' => true,
         'declare_equal_normalize' => true,
         'lowercase_cast' => true,
