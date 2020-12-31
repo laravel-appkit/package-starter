@@ -44,12 +44,12 @@ fi
 
 echo
 
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name_cap/${package_name^}/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name_cap/${package_name^}/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
 
 sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
