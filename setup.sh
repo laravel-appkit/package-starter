@@ -70,7 +70,7 @@ then
     rm -- "$0"
 fi
 
-if [[ -f "vendor" ]]
+if [[ -d "vendor" ]]
 then
     echo "Composer dependancies already installed. Dumping autoload."
     composer dump-autoload
