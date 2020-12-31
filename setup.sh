@@ -70,6 +70,7 @@ then
 
     git add .
     git commit -m ":sparkles: Configure Package";
+    git pull
     git push
 
     echo "Replaced all values and commited, self destructing in 3... 2... 1..."
