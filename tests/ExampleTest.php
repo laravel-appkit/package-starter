@@ -1,6 +1,6 @@
 <?php
 
-namespace Appkit\:package_name_cap\Tests;
+namespace AppKit\:package_name_cap\Tests;
 
 class ExampleTest extends TestCase
 {

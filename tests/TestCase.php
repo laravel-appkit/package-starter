@@ -1,9 +1,9 @@
 <?php
 
-namespace Appkit\:package_name_cap\Tests;
+namespace AppKit\:package_name_cap\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Appkit\:package_name_cap\:package_name_capFacade;
+use AppKit\:package_name_cap\:package_name_capFacade;
 use AppKit\:package_name_cap\:package_name_capServiceProvider;
 
 class TestCase extends OrchestraTestCase
