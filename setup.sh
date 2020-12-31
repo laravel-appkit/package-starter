@@ -79,4 +79,5 @@ else
     echo "Replaced all values"
 fi
 
-echo "'\033[0;32m'Build something awesome!"
+echo
+printf "\033[0;32mBuild something awesome!"
