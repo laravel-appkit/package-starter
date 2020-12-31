@@ -1,10 +1,10 @@
 <?php
 
-namespace AppKit\:package_name_cap;
+namespace AppKit\:package_name_php;
 
 use Illuminate\Support\ServiceProvider;
 
-class :package_name_capServiceProvider extends ServiceProvider
+class :package_name_phpServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -54,7 +54,7 @@ class :package_name_capServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton(':package_name', function () {
-            return new :package_name_cap;
+            return new :package_name_php;
         });
     }
 }

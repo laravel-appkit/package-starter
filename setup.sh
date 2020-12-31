@@ -44,19 +44,21 @@ fi
 
 echo
 
+package_name_php=$(echo '$package_name' | sed -E 's/[^a-z]+([a-z])/\U\1/gi;s/^([A-Z])/\l\1/')
+
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_name/$author_name/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_username/$author_username/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:author_email/$author_email/g" {} \;
-find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name_cap/${package_name^}/g" {} \;
+find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name_php/${package_name_php^}/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_name/$package_name/g" {} \;
 find . -type f -not -path "./.git/*" -not -path "./vendor/*" -not -path "./setup.sh" -exec sed -i '' -e "s/:package_description/$package_description/g" {} \;
 
 sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
 
-mv "./src/routes/package.php" "./src/routes/$package_name.php"
-mv "./src/Package.php" "./src/${package_name^}.php"
-mv "./src/PackageFacade.php" "./src/${package_name^}Facade.php"
-mv "./src/PackageServiceProvider.php" "./src/${package_name^}ServiceProvider.php"
+mv "./src/routes/package.php" "./src/routes/$package_name_php.php"
+mv "./src/Package.php" "./src/${package_name_php^}.php"
+mv "./src/PackageFacade.php" "./src/${package_name_php^}Facade.php"
+mv "./src/PackageServiceProvider.php" "./src/${package_name_php^}ServiceProvider.php"
 
 if [ "$current_directory" != "package-starter" ]
 then

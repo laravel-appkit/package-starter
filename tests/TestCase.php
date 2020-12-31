@@ -1,10 +1,10 @@
 <?php
 
-namespace AppKit\:package_name_cap\Tests;
+namespace AppKit\:package_name_php\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use AppKit\:package_name_cap\:package_name_capFacade;
-use AppKit\:package_name_cap\:package_name_capServiceProvider;
+use AppKit\:package_name_php\:package_name_phpFacade;
+use AppKit\:package_name_php\:package_name_phpServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
@@ -33,7 +33,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getPackageProviders($app)
     {
-        return [:package_name_capServiceProvider::class];
+        return [:package_name_phpServiceProvider::class];
     }
 
     /**
@@ -45,7 +45,7 @@ class TestCase extends OrchestraTestCase
     protected function getPackageAliases($app)
     {
         return [
-            ':package_name_cap' => :package_name_capFacade::class
+            ':package_name_php' => :package_name_phpFacade::class
         ];
     }
 

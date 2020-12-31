@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "AppKit\\:package_name_cap\\": "src"
+            "AppKit\\:package_name_php\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AppKit\\:package_name_cap\\Tests\\": "tests"
+            "AppKit\\:package_name_php\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AppKit\\:package_name_cap\\:package_name_capServiceProvider"
+                "AppKit\\:package_name_php\\:package_name_phpServiceProvider"
             ],
             "aliases": {
-                ":package_name_cap": "AppKit\\:package_name_cap\\:package_name_capFacade"
+                ":package_name_php": "AppKit\\:package_name_php\\:package_name_phpFacade"
             }
         }
     }
