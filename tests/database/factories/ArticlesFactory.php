@@ -2,7 +2,6 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use AppKit\:package_name_php\Tests\Models\Article;
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
 /*
