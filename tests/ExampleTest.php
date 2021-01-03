@@ -18,6 +18,4 @@ class ExampleTest extends TestCase
 
         $this->assertEquals(5, Article::count());
     }
-
-
 }

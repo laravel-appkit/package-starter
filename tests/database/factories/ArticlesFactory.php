@@ -18,7 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Article::class, function (Faker $faker) {
     return [
-        'title' => $faker->string,
-        'body' => $faker->paragraphs(3),
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
     ];
 });
