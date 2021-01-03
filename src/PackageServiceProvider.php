@@ -26,17 +26,17 @@ class :package_name_phpServiceProvider extends ServiceProvider
 
             // Publishing the views.
             /*$this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/:package_name'),
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/:package_name'),
             ], 'views');*/
 
             // Publishing assets.
             /*$this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('vendor/:package_name'),
+                __DIR__ . '/../resources/assets' => public_path('vendor/:package_name'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/:package_name'),
+                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/:package_name'),
             ], 'lang');*/
 
             // Registering package commands.
