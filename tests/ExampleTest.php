@@ -14,8 +14,10 @@ class ExampleTest extends TestCase
     /** @test */
     public function artcilesCanBeLoaded()
     {
-        $articles = factory(Article::class, 5)->make();
+        // create 5 articles
+        factory(Article::class, 5)->create();
 
+        // check the database for 5 articles
         $this->assertEquals(5, Article::count());
     }
 }
