@@ -52,7 +52,7 @@ echo "Renaming files"
 
 mv "./routes/package.php" "./routes/$package_name_php.php"
 mv "./src/Package.php" "./src/${package_name_php^}.php"
-mv "./src/PackageFacade.php" "./src/${package_name_php^}Facade.php"
+mv "./src/Facades/Package.php" "./src/Facades/${package_name_php^}.php"
 mv "./src/PackageServiceProvider.php" "./src/${package_name_php^}ServiceProvider.php"
 
 if [[ -d "vendor" ]]
