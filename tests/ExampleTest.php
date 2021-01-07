@@ -3,6 +3,7 @@
 namespace AppKit\:package_name_php\Tests;
 
 use AppKit\:package_name_php\Tests\Models\Article;
+
 class ExampleTest extends TestCase
 {
     /** @test */
@@ -12,7 +13,7 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-    public function artcilesCanBeLoaded()
+    public function articlesCanBeLoaded()
     {
         // create 5 articles
         factory(Article::class, 5)->create();
