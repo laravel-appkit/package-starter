@@ -3,8 +3,8 @@
 namespace AppKit\:package_name_php\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use AppKit\:package_name_php\:package_name_phpFacade;
 use AppKit\:package_name_php\:package_name_phpServiceProvider;
+use AppKit\:package_name_php\Facades\:package_name_php;
 
 class TestCase extends OrchestraTestCase
 {
@@ -45,7 +45,7 @@ class TestCase extends OrchestraTestCase
     protected function getPackageAliases($app)
     {
         return [
-            ':package_name_php' => :package_name_phpFacade::class
+            ':package_name_php' => :package_name_php::class
         ];
     }
 

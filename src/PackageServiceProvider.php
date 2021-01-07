@@ -54,7 +54,7 @@ class :package_name_phpServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton(':package_name', function () {
-            return new :package_name_php;
+            return new :package_name_php();
         });
     }
 }
